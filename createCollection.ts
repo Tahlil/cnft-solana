@@ -1,7 +1,7 @@
 import { Connection, Keypair, PublicKey } from "@solana/web3.js";
-import { Metaplex, keypairIdentity, bundlrStorage, toMetaplexFile, toBigNumber } from "@metaplex-foundation/js";
-
+import { Metaplex, keypairIdentity, irysStorage, toMetaplexFile, toBigNumber, CreateCandyMachineInput, DefaultCandyGuardSettings, CandyMachineItem, toDateTime, sol, TransactionBuilder, CreateCandyMachineBuilderContext } from "@metaplex-foundation/js";
 import secret from './guideSecret.json';
+
 const QUICKNODE_RPC = "https://api.devnet.solana.com";
 const SOLAANA_CONNECTION = new Connection(QUICKNODE_RPC);
 const WALLET = Keypair.fromSecretKey(new Uint8Array(secret));
@@ -11,11 +11,7 @@ const CANDY_MACHINE_ID = '';
 
 const METAPLEX = Metaplex.make(SOLAANA_CONNECTION)
     .use(keypairIdentity(WALLET))
-    .use(bundlrStorage({
-        address: 'https://devnet.bundlr.network',
-        providerUrl: QUICKNODE_RPC,
-        timeout: 60000,
-    }));
+    .use(irysStorage());
 
     async function createCollectionNft() {
         const { nft: collectionNft } = await METAPLEX.nfts().create({
