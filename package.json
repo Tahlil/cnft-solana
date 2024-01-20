@@ -1,0 +1,25 @@
+{
+  "name": "cnft_solana_metaplex",
+  "version": "1.0.0",
+  "description": "Create CNFT with bubblegum",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tahlil/cnft-solana.git"
+  },
+  "keywords": [
+    "cnft",
+    "nft",
+    "bubblegum",
+    "metaplex"
+  ],
+  "author": "Tahlil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tahlil/cnft-solana/issues"
+  },
+  "homepage": "https://github.com/Tahlil/cnft-solana#readme"
+}
