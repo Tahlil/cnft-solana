@@ -16,3 +16,18 @@ const METAPLEX = Metaplex.make(SOLAANA_CONNECTION)
         providerUrl: QUICKNODE_RPC,
         timeout: 60000,
     }));
+
+    async function createCollectionNft() {
+        const { nft: collectionNft } = await METAPLEX.nfts().create({
+            name: "QuickNode Demo NFT Collection",
+            uri: NFT_METADATA,
+            sellerFeeBasisPoints: 0,
+            isCollection: true,
+            updateAuthority: WALLET,
+          });
+    
+          console.log(`✅ - Minted Collection NFT: ${collectionNft.address.toString()}`);
+          console.log(`     https://explorer.solana.com/address/${collectionNft.address.toString()}?cluster=devnet`);
+    }
+
+    createCollectionNft();
