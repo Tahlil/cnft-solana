@@ -31,7 +31,6 @@ import {
   TokenProgramVersion,
   TokenStandard,
 } from "@metaplex-foundation/mpl-bubblegum";
-import { CreateMetadataAccountArgsV3 } from "@metaplex-foundation/mpl-token-metadata";
 
 // import custom helpers for demos
 import {
@@ -182,7 +181,7 @@ let initBalance: number, balance: number;
   */
 
   // define the metadata to be used for creating the NFT collection
-  const collectionMetadataV3: CreateMetadataAccountArgsV3 = {
+  const collectionMetadataV3 = {
     data: {
       name: "Super Sweet NFT Collection",
       symbol: "SSNC",
