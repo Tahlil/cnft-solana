@@ -118,4 +118,6 @@ dist
 # Mac
 .DS_Store
 
+# Wallets
 guideSecret.json
+wallet.json
