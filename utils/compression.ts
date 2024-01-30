@@ -23,7 +23,7 @@ import {
 } from "@metaplex-foundation/mpl-bubblegum";
 import {
   PROGRAM_ID as TOKEN_METADATA_PROGRAM_ID,
-  CreateMetadataAccountArgsV3,
+  CreateMetadataAccountV3InstructionArgs,
   createCreateMetadataAccountV3Instruction,
   createCreateMasterEditionV3Instruction,
   createSetCollectionSizeInstruction,
@@ -121,7 +121,7 @@ export async function createTree(
 export async function createCollection(
   connection: Connection,
   payer: Keypair,
-  metadataV3: CreateMetadataAccountArgsV3,
+  metadataV3: CreateMetadataAccountV3InstructionArgs,
 ) {
   // create and initialize the SPL token mint
   console.log("Creating the collection's mint...");
